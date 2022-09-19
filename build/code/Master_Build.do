@@ -18,18 +18,18 @@ if "`c(username)'" == "Francisco"   {
     global ROOT "C:\Users\Francisco\Dropbox\DataZoom"
     global DATABASE "C:\Users\Francisco\Dropbox\DataZoom"
 }
-else if "`c(username)'" == "DELL"   {
-    global ROOT "C:/Users/DELL/Documents/GitHub"
-    global DATABASE "D:\Dropbox\DataZoom"
+else if "`c(username)'" == "titobruni"   {
+    global ROOT "C:\Users\titobruni\Documents\GitHub"
+    global DATABASE "C:\Users\titobruni\Documents\pnad_cont\stata"
 }	
 
-global input_advanc     "${DATABASE}\BasesIBGE\datazoom_rar\PNAD_CONTINUA\pnadcontinua_trimestral_2022024\Stata\pnadcontinua"
-global input_pnadanual	"${DATABASE}\BasesIBGE\datazoom_rar\PNAD_CONTINUA\pnadcontinua_anual_20191016\Stata"      
-global input_pnadcdoc	"${DATABASE}\BasesIBGE\datazoom_rar\PNAD_CONTINUA\pnadcontinua_trimestral_2022024\Documentacao"      
-global tmp_dir			"${ROOT}\Amazonia_Dinamismo_Economico\build\tmp"   
-global code_dir			"${ROOT}\Amazonia_Dinamismo_Economico\build\code"   
-global output_dir		"${ROOT}\Amazonia_Dinamismo_Economico\build\output"   
-global input_dir		"${ROOT}\Amazonia_Dinamismo_Economico\build\input"   
+global input_advanc     "${DATABASE}\pnadcontinua_trimestral_2022024\pnadcontinua"
+global input_pnadanual	"${DATABASE}\pnadcontinua_anual_20191016\Stata"      
+global input_pnadcdoc	"${DATABASE}\pnadcontinua_trimestral_2022024\Documentacao"      
+global tmp_dir			"${ROOT}\Amazon_Economic_Dynamism\build\tmp"   
+global code_dir			"${ROOT}\Amazon_Economic_Dynamism\build\code"   
+global output_dir		"${ROOT}\Amazon_Economic_Dynamism\build\output"   
+global input_dir		"${ROOT}\Amazon_Economic_Dynamism\build\input"   
 
 //////////////////////////////////////////////
 //	
@@ -249,3 +249,4 @@ local datafiles: dir "${tmp_dir}/" files "*.pdf"
 foreach datafile of local datafiles {
         rm `datafile'
 }
+
