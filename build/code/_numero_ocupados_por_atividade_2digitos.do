@@ -149,3 +149,5 @@ collapse (firstnm) `colvar' , by(Ano Trimestre titulo)
 foreach v of var `colvar' {
     label var `v' "`l`v''"
 }
+
+
