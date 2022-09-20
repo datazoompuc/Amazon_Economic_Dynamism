@@ -7,7 +7,7 @@ capture macro drop sub_amostra_area_geografica sub_amostra_demografia
 global sub_amostra_area_geografica = "Amazônia Legal"
 global sub_amostra_demografia = "jovem"
 
-forvalues yr = 2012(1)2021{
+forvalues yr = 2012(1)2022{
 	* call data
 	use "$input_advanc\PNADC`yr'.dta", clear
 	* sample 1
@@ -25,7 +25,7 @@ forvalues yr = 2012(1)2021{
 
 * append temporary data base
 clear
-forvalues yr = 2012(1)2021{
+forvalues yr = 2012(1)2022{
 	* call data
 	append using "$tmp_dir\_temp_PNADC`yr'.dta"
 }
@@ -39,7 +39,7 @@ save "$output_dir\_amz_jovem_numero_ocupados_por_ocupacao_2digitos.dta", replace
 //	(CNAE de 2 digitos)
 //////////////////////////////////////////////
 
-forvalues yr = 2012(1)2021{
+forvalues yr = 2012(1)2022{
 	* call data
 	use "$input_advanc\PNADC`yr'.dta", clear
 	* sample 1
@@ -57,7 +57,7 @@ forvalues yr = 2012(1)2021{
 
 * append temporary data base
 clear
-forvalues yr = 2012(1)2021{
+forvalues yr = 2012(1)2022{
 	* call data
 	append using "$tmp_dir\_temp_PNADC`yr'.dta"
 }
