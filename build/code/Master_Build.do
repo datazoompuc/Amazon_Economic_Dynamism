@@ -26,10 +26,10 @@ else if "`c(username)'" == "titobruni"   {
 global input_advanc     "${DATABASE}\pnadcontinua_trimestral_2022024\Stata\pnadcontinua"
 global input_pnadanual	"${DATABASE}\pnadcontinua_anual_20191016\Stata"      
 global input_pnadcdoc	"${DATABASE}\pnadcontinua_trimestral_2022024\Documentacao"      
-global tmp_dir			"${ROOT}\Amazon_Economic_Dynamism\build\tmp"   
-global code_dir			"${ROOT}\Amazon_Economic_Dynamism\build\code"   
-global output_dir		"${ROOT}\Amazon_Economic_Dynamism\build\output"   
-global input_dir		"${ROOT}\Amazon_Economic_Dynamism\build\input"   
+global tmp_dir			"${ROOT}\datazoom_labour_amazon\build\tmp"   
+global code_dir			"${ROOT}\datazoom_labour_amazon\build\code"   
+global output_dir		"${ROOT}\datazoom_labour_amazon\build\output"   
+global input_dir		"${ROOT}\datazoom_labour_amazon\build\input"   
 
 //////////////////////////////////////////////
 //	
