@@ -36,7 +36,7 @@ local type raca_branca raca_preta raca_indigena 	/*
 foreach lname in `type' {
 	
 * begin of loop over years
-forvalues yr = 2012(1)2020{	
+forvalues yr = 2012(1)2022{	
 	* call data
 	use "$input_advanc\PNADC`yr'.dta", clear
 	* run code
@@ -51,7 +51,7 @@ forvalues yr = 2012(1)2020{
 
 * append temporary data base
 clear
-forvalues yr = 2012(1)2020{
+forvalues yr = 2012(1)2022{
 	* call data
 	append using "$tmp_dir\_temp_composicao_demografica_PNADC`yr'.dta"
 }

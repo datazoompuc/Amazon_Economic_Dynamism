@@ -13,7 +13,7 @@ A análise está dividida da seguinte forma:
 */
 
 * Stata version
-version 16.1 //always set the stata version being used
+version 14.2 //always set the stata version being used
 set more off, perm
 
 // caminhos (check your username by typing "di c(username)" in Stata) ----
@@ -27,13 +27,13 @@ else if "`c(username)'" == "f.cavalcanti"   {
 }	
 else if "`c(username)'" == "titobruni"   {
     global ROOT "C:\Users\titobruni\Documents\GitHub"
-    global DATABASE "G:\.shortcut-targets-by-id\1bg4JQuS8YDz3Afj1yP6CEOlTI49w7zyY\Data Zoom\Bases\datazoom_rar\PNAD_CONTINUA"
+    global DATABASE "G:\.shortcut-targets-by-id\1bg4JQuS8YDz3Afj1yP6CEOlTI49w7zyY"
 }	
 
-global input_basiic		"${RAIZ}\DataZoom\BasesIBGE\datazoom_rar\PNAD_CONTINUA\pnadcontinua_trimestral_20190729\pnad_painel\basico"  
-global input_advanc     "${RAIZ}\DataZoom\BasesIBGE\datazoom_rar\PNAD_CONTINUA\pnadcontinua_trimestral_2022024\Stata\pnadcontinua"
-global input_pnadanual	"${RAIZ}\DataZoom\BasesIBGE\datazoom_rar\PNAD_CONTINUA\pnadcontinua_anual_20191016\Stata"      
-global tmp_dir			"${ROOT}\Amazonia_Mercado_Trabalho\build\tmp"   
+global input_basiic		"${DATABASE}\DataZoom\Bases\datazoom_rar\PNAD_CONTINUA\pnadcontinua_trimestral_20190729\pnad_painel\basico"  
+global input_advanc     "${DATABASE}\Data Zoom\Bases\datazoom_rar\PNAD_CONTINUA\pnadcontinua_trimestral_2022024\Stata\pnadcontinua"
+global input_pnadanual	"${DATABASE}\DataZoom\Bases\datazoom_rar\PNAD_CONTINUA\pnadcontinua_anual_20191016\Stata"      
+global tmp_dir			"${ROOT}\datazoom_labour_amazon\Labour_Market\tmp"   
 global code_dir			"${ROOT}\datazoom_labour_amazon\Labour_Market\code"   
 global output_dir		"${ROOT}\datazoom_labour_amazon\Labour_Market\output"   
 global input_dir		"${ROOT}\datazoom_labour_amazon\Labour_Market\input"   
@@ -115,7 +115,7 @@ export excel using "$output_dir\_retrato_emprego_resto_brasil.xls", /*
 
 global area_geografica = "Amazônia Legal"
 
-forvalues yr = 2012(1)2021{
+forvalues yr = 2012(1)2022{
 	* call data
 	use "$input_advanc\PNADC`yr'.dta", clear
 	*sample 1
@@ -127,7 +127,7 @@ forvalues yr = 2012(1)2021{
 
 * append temporary data base
 clear
-forvalues yr = 2012(1)2021{
+forvalues yr = 2012(1)2022{
 	* call data
 	append using "$tmp_dir\_temp_estrutura_emprego_PNADC`yr'.dta"
 }
@@ -143,7 +143,7 @@ save "$output_dir\_estrutura_emprego_amazonia_legal.dta", replace
 
 global area_geografica = "Resto do Brasil"
 
-forvalues yr = 2012(1)2021{
+forvalues yr = 2012(1)2022{
 	* call data
 	use "$input_advanc\PNADC`yr'.dta", clear
 	*sample 1
@@ -155,7 +155,7 @@ forvalues yr = 2012(1)2021{
 
 * append temporary data base
 clear
-forvalues yr = 2012(1)2021{
+forvalues yr = 2012(1)2022{
 	* call data
 	append using "$tmp_dir\_temp_estrutura_emprego_PNADC`yr'.dta"
 }
@@ -171,7 +171,7 @@ save "$output_dir\_estrutura_emprego_resto_brasil.dta", replace
 
 global area_geografica = "Rondônia"
 
-forvalues yr = 2012(1)2021{
+forvalues yr = 2012(1)2022{
 	* call data
 	use "$input_advanc\PNADC`yr'.dta", clear
 	*sample 1
@@ -183,7 +183,7 @@ forvalues yr = 2012(1)2021{
 
 * append temporary data base
 clear
-forvalues yr = 2012(1)2021{
+forvalues yr = 2012(1)2022{
 	* call data
 	append using "$tmp_dir\_temp_estrutura_emprego_PNADC`yr'.dta"
 }
@@ -200,7 +200,7 @@ save "$output_dir\_estrutura_emprego_rondonia.dta", replace
 
 global area_geografica = "Acre"
 
-forvalues yr = 2012(1)2021{
+forvalues yr = 2012(1)2022{
 	* call data
 	use "$input_advanc\PNADC`yr'.dta", clear
 	*sample 1
@@ -212,7 +212,7 @@ forvalues yr = 2012(1)2021{
 
 * append temporary data base
 clear
-forvalues yr = 2012(1)2021{
+forvalues yr = 2012(1)2022{
 	* call data
 	append using "$tmp_dir\_temp_estrutura_emprego_PNADC`yr'.dta"
 }
@@ -230,7 +230,7 @@ save "$output_dir\_estrutura_emprego_acre.dta", replace
 
 global area_geografica = "Amazonas"
 
-forvalues yr = 2012(1)2021{
+forvalues yr = 2012(1)2022{
 	* call data
 	use "$input_advanc\PNADC`yr'.dta", clear
 	*sample 1
@@ -242,7 +242,7 @@ forvalues yr = 2012(1)2021{
 
 * append temporary data base
 clear
-forvalues yr = 2012(1)2021{
+forvalues yr = 2012(1)2022{
 	* call data
 	append using "$tmp_dir\_temp_estrutura_emprego_PNADC`yr'.dta"
 }
@@ -259,7 +259,7 @@ save "$output_dir\_estrutura_emprego_amazonas.dta", replace
 
 global area_geografica = "Roraima"
 
-forvalues yr = 2012(1)2021{
+forvalues yr = 2012(1)2022{
 	* call data
 	use "$input_advanc\PNADC`yr'.dta", clear
 	*sample 1
@@ -271,7 +271,7 @@ forvalues yr = 2012(1)2021{
 
 * append temporary data base
 clear
-forvalues yr = 2012(1)2021{
+forvalues yr = 2012(1)2022{
 	* call data
 	append using "$tmp_dir\_temp_estrutura_emprego_PNADC`yr'.dta"
 }
@@ -288,7 +288,7 @@ save "$output_dir\_estrutura_emprego_roraima.dta", replace
 
 global area_geografica = "Pará"
 
-forvalues yr = 2012(1)2021{
+forvalues yr = 2012(1)2022{
 	* call data
 	use "$input_advanc\PNADC`yr'.dta", clear
 	*sample 1
@@ -300,7 +300,7 @@ forvalues yr = 2012(1)2021{
 
 * append temporary data base
 clear
-forvalues yr = 2012(1)2021{
+forvalues yr = 2012(1)2022{
 	* call data
 	append using "$tmp_dir\_temp_estrutura_emprego_PNADC`yr'.dta"
 }
@@ -317,7 +317,7 @@ save "$output_dir\_estrutura_emprego_para.dta", replace
 
 global area_geografica = "Amapá"
 
-forvalues yr = 2012(1)2021{
+forvalues yr = 2012(1)2022{
 	* call data
 	use "$input_advanc\PNADC`yr'.dta", clear
 	*sample 1
@@ -329,7 +329,7 @@ forvalues yr = 2012(1)2021{
 
 * append temporary data base
 clear
-forvalues yr = 2012(1)2021{
+forvalues yr = 2012(1)2022{
 	* call data
 	append using "$tmp_dir\_temp_estrutura_emprego_PNADC`yr'.dta"
 }
@@ -346,7 +346,7 @@ save "$output_dir\_estrutura_emprego_amapa.dta", replace
 
 global area_geografica = "Tocantins"
 
-forvalues yr = 2012(1)2021{
+forvalues yr = 2012(1)2022{
 	* call data
 	use "$input_advanc\PNADC`yr'.dta", clear
 	*sample 1
@@ -358,7 +358,7 @@ forvalues yr = 2012(1)2021{
 
 * append temporary data base
 clear
-forvalues yr = 2012(1)2021{
+forvalues yr = 2012(1)2022{
 	* call data
 	append using "$tmp_dir\_temp_estrutura_emprego_PNADC`yr'.dta"
 }
@@ -376,7 +376,7 @@ save "$output_dir\_estrutura_emprego_tocantins.dta", replace
 
 global area_geografica = "Mato Grosso"
 
-forvalues yr = 2012(1)2021{
+forvalues yr = 2012(1)2022{
 	* call data
 	use "$input_advanc\PNADC`yr'.dta", clear
 	*sample 1
@@ -388,7 +388,7 @@ forvalues yr = 2012(1)2021{
 
 * append temporary data base
 clear
-forvalues yr = 2012(1)2021{
+forvalues yr = 2012(1)2022{
 	* call data
 	append using "$tmp_dir\_temp_estrutura_emprego_PNADC`yr'.dta"
 }
@@ -411,7 +411,7 @@ save "$output_dir\_estrutura_emprego_matogrosso.dta", replace
 
 global area_geografica = "Amazônia Legal"
 
-forvalues yr = 2012(1)2021{
+forvalues yr = 2012(1)2022{
 	* call data
 	use "$input_advanc\PNADC`yr'.dta", clear
 	*sample 1
@@ -423,7 +423,7 @@ forvalues yr = 2012(1)2021{
 
 * append temporary data base
 clear
-forvalues yr = 2012(1)2021{
+forvalues yr = 2012(1)2022{
 	* call data
 	append using "$tmp_dir\_temp_estrutura_renda_PNADC`yr'.dta"
 }
@@ -439,7 +439,7 @@ export excel using "$output_dir\_estrutura_renda_amazonia_legal.xls", /*
 
 global area_geografica = "Resto do Brasil"
 
-forvalues yr = 2012(1)2021{
+forvalues yr = 2012(1)2022{
 	* call data
 	use "$input_advanc\PNADC`yr'.dta", clear
 	* run code
@@ -450,7 +450,7 @@ forvalues yr = 2012(1)2021{
 
 * append temporary data base
 clear
-forvalues yr = 2012(1)2021{
+forvalues yr = 2012(1)2022{
 	* call data
 	append using "$tmp_dir\_temp_estrutura_renda_PNADC`yr'.dta"
 }
