@@ -5,7 +5,7 @@
 //////////////////////////////////////////////
 
 * call data deflator_PNADC_2021_trimestral_070809
-import excel "$input_pnadcdoc\deflator_PNADC_2022_trimestral_040506.xls", sheet("deflator") firstrow allstring clear
+import excel "$input_pnadcdoc\deflator_PNADC_2022_trimestral_070809.xls", sheet("deflator") firstrow allstring clear
 
 * clean data
 cap gen Trimestre = ""
