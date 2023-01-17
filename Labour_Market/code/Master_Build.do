@@ -36,7 +36,7 @@ global input_pnadanual	"${DATABASE}\DataZoom\Bases\datazoom_rar\PNAD_CONTINUA\pn
 global tmp_dir			"${ROOT}\datazoom_labour_amazon\Labour_Market\tmp"   
 global code_dir			"${ROOT}\datazoom_labour_amazon\Labour_Market\code"   
 global output_dir		"${ROOT}\datazoom_labour_amazon\Labour_Market\output"   
-global input_dir		"${ROOT}\datazoom_labour_amazon\Economic_Dynamism\output "  
+global input_dir		"${ROOT}\datazoom_labour_amazon\Economic_Dynamism\output"  
 
 * set more off 
 set more off, perm
