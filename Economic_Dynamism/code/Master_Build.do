@@ -22,6 +22,10 @@ else if "`c(username)'" == "titobruni"   {
     global ROOT "C:\Users\titobruni\Documents\GitHub"
     global DATABASE "G:\.shortcut-targets-by-id\1bg4JQuS8YDz3Afj1yP6CEOlTI49w7zyY\Data Zoom\Bases\datazoom_rar\PNAD_CONTINUA"
 }	
+else if "`c(username)'" == "f.cavalcanti"   {
+    global ROOT "C:\Users\f.cavalcanti\Documents"
+    global DATABASE "G:\Meu Drive\Data Zoom\Bases\datazoom_rar\PNAD_CONTINUA"
+}	
 
 global input_advanc     "${DATABASE}\pnadcontinua_trimestral_2022024\Stata\pnadcontinua"
 global input_pnadanual	"${DATABASE}\pnadcontinua_anual_20191016\Stata"      
