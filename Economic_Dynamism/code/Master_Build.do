@@ -35,6 +35,8 @@ global code_dir			"${ROOT}\datazoom_labour_amazon\Economic_Dynamism\code"
 global output_dir		"${ROOT}\datazoom_labour_amazon\Economic_Dynamism\output"   
 global input_dir		"${ROOT}\datazoom_labour_amazon\Economic_Dynamism\input"   
 
+cap mkdir $tmp_dir
+
 //////////////////////////////////////////////
 //	
 //	Gerar deflator
