@@ -19,7 +19,7 @@ if "`c(username)'" == "Francisco"   {
 }
 else if "`c(username)'" == "f.cavalcanti"   {
     global ROOT "C:\Users\f.cavalcanti\Documents"
-    global DATABASE "G:\Meu Drive\Data Zoom\Bases\datazoom_rar\PNAD_CONTINUA"
+    global DATABASE "G:\Meu Drive"
 }
 else if "`c(username)'" == "titobruni"   {
     global ROOT "C:\Users\titobruni\Documents\GitHub"
@@ -33,6 +33,8 @@ global tmp_dir			"${ROOT}\datazoom_labour_amazon\Labour_Market\tmp"
 global code_dir			"${ROOT}\datazoom_labour_amazon\Labour_Market\code"   
 global output_dir		"${ROOT}\datazoom_labour_amazon\Labour_Market\output"   
 global input_dir		"${ROOT}\datazoom_labour_amazon\Economic_Dynamism\output"  
+
+cap mkdir $tmp_dir
 
 * set more off 
 set more off, perm
@@ -394,15 +396,6 @@ cap gen idin = "matogrosso"
 * save in the output directory
 save "$output_dir\_estrutura_emprego_matogrosso.dta", replace
 
-//////////////////////////////////////////////
-//	
-//	Composição demográfica no mercado trabalho
-//	
-//////////////////////////////////////////////
-
-	* run code
-	do "$code_dir\_composicao_demografica"
-	
 
 ******************************************
 ** delete temporary files
