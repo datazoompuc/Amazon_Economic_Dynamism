@@ -35,6 +35,8 @@ global code_dir			"${ROOT}\datazoom_labour_amazon\Economic_Dynamism\code"
 global output_dir		"${ROOT}\datazoom_labour_amazon\Economic_Dynamism\output"   
 global input_dir		"${ROOT}\datazoom_labour_amazon\Economic_Dynamism\input"   
 
+cap mkdir $tmp_dir
+
 //////////////////////////////////////////////
 //	
 //	Gerar deflator
@@ -163,56 +165,6 @@ clear
 * run code
 clear
 do "$code_dir\_amz_to"
-clear
-
-//////////////////////////////////////////////
-//	
-//	Dinamismo Econômico na Zona Urbana da Amazônia
-//	
-//////////////////////////////////////////////
-* run code
-clear
-do "$code_dir\_amz_urbana"
-clear
-
-//////////////////////////////////////////////
-//	
-//	Dinamismo Econômico na Zona Rural da Amazônia
-//	
-//////////////////////////////////////////////
-* run code
-clear
-do "$code_dir\_amz_rural"
-clear
-
-//////////////////////////////////////////////
-//	
-//	Dinamismo Econômico Entre os Jovens da Amazônia
-//	
-//////////////////////////////////////////////
-* run code
-clear
-do "$code_dir\_amz_jovem"
-clear
-
-//////////////////////////////////////////////
-//	
-//	Dinamismo Econômico Entre os Escolarizados (com pelo menos ensino medio)
-//	
-//////////////////////////////////////////////
-* run code
-clear
-do "$code_dir\_amz_edu_h"
-clear
-
-//////////////////////////////////////////////
-//	
-//	Dinamismo Econômico Entre os Não Escolarizados (até ensino medio)
-//	
-//////////////////////////////////////////////
-* run code
-clear
-do "$code_dir\_amz_edu_l"
 clear
 
 //////////////////////////////////////////////

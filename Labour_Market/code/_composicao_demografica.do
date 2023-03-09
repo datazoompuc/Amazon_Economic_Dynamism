@@ -61,8 +61,6 @@ gen `lname' = 1
 
 * save in the output directory
 save "$output_dir\_composicao_demografica_amazonia_legal_`lname'.dta", replace
-export excel using "$output_dir\_composicao_demografica_amazonia_legal_`lname'.xls", /*
-	*/	firstrow(varlabels) replace
 
 * end of loop over demographic composition
 }
